@@ -1,0 +1,255 @@
+.confirmation {
+  min-height: auto;
+  padding: 100px 20px;
+}
+
+.confirmation-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-medium);
+  margin-bottom: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 20px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(184, 151, 107, 0.3);
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(184, 151, 107, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23B8976B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 30px;
+  padding-top: 5px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--color-text-medium);
+}
+
+.radio-label input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid var(--color-gold-light);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.radio-label input[type="radio"]:checked {
+  border-color: var(--color-gold);
+  background-color: var(--color-gold);
+}
+
+.radio-label input[type="radio"]:hover {
+  border-color: var(--color-gold);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px 40px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: var(--color-gold);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(184, 151, 107, 0.3);
+}
+
+.confirmation-success {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 30px;
+  color: var(--color-gold);
+}
+
+.success-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.confirmation-success h2 {
+  font-size: 3rem;
+  color: var(--color-text-dark);
+  margin-bottom: 20px;
+}
+
+.confirmation-success p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text-medium);
+  margin-bottom: 10px;
+}
+
+.success-subtext {
+  font-family: var(--font-script);
+  font-size: 1.5rem !important;
+  color: var(--color-gold) !important;
+  margin-top: 20px !important;
+}
+
+@media (max-width: 768px) {
+  .confirmation {
+    padding: 60px 15px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .radio-group {
+    gap: 20px;
+  }
+
+  .confirmation-success h2 {
+    font-size: 2.5rem;
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirmation {
+    padding: 50px 15px;
+  }
+
+  .confirmation-form {
+    max-width: 100%;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group select,
+  .form-group textarea {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  .radio-label {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  .radio-label input[type="radio"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .submit-btn {
+    padding: 15px 30px;
+    font-size: 0.8rem;
+  }
+
+  .confirmation-success h2 {
+    font-size: 2rem;
+  }
+
+  .confirmation-success p {
+    font-size: 0.9rem;
+  }
+
+  .success-subtext {
+    font-size: 1.2rem !important;
+  }
+
+  .success-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+}

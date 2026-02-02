@@ -1,0 +1,229 @@
+.hero {
+  min-height: 100vh;
+  padding-top: 120px;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.hero-subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 0.5em;
+  color: var(--color-text-medium);
+  font-weight: 400;
+}
+
+.hero-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.hero-name {
+  font-size: 4rem;
+  color: var(--color-text-dark);
+  line-height: 1.1;
+}
+
+.hero-ampersand {
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  margin: -10px 0;
+}
+
+.hero-invitation {
+  margin-top: 15px;
+}
+
+.hero-invitation p {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-medium);
+  line-height: 2;
+}
+
+.hero-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  padding: 25px 45px;
+  border: 1px solid var(--color-gold-light);
+  position: relative;
+}
+
+.hero-date::before,
+.hero-date::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-color: var(--color-gold);
+  border-style: solid;
+}
+
+.hero-date::before {
+  top: -5px;
+  left: -5px;
+  border-width: 1px 0 0 1px;
+}
+
+.hero-date::after {
+  bottom: -5px;
+  right: -5px;
+  border-width: 0 1px 1px 0;
+}
+
+.date-number {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--color-text-dark);
+  line-height: 1;
+}
+
+.date-month {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text-medium);
+  margin-top: 5px;
+}
+
+.date-year {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-light);
+  margin-top: 5px;
+}
+
+.hero-cta {
+  margin-top: 25px;
+}
+
+.hero-cta span {
+  font-size: 2.2rem;
+  color: var(--color-text-dark);
+}
+
+.scroll-indicator {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--color-gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .hero-content {
+    gap: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+  }
+
+  .hero-name {
+    font-size: 2.8rem;
+  }
+
+  .hero-ampersand {
+    font-size: 1.8rem;
+    margin: -5px 0;
+  }
+
+  .hero-invitation p {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .hero-date {
+    padding: 20px 35px;
+  }
+
+  .hero-date::before,
+  .hero-date::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .date-number {
+    font-size: 2.8rem;
+  }
+
+  .date-month {
+    font-size: 0.8rem;
+  }
+
+  .date-year {
+    font-size: 0.7rem;
+  }
+
+  .hero-cta span {
+    font-size: 1.8rem;
+  }
+
+  .scroll-indicator {
+    margin-top: 30px;
+  }
+
+  .scroll-line {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 90px;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .hero-ampersand {
+    font-size: 1.5rem;
+  }
+
+  .date-number {
+    font-size: 2.2rem;
+  }
+
+  .hero-cta span {
+    font-size: 1.5rem;
+  }
+}

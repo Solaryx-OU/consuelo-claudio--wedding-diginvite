@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-eggshell: #FAF9F6;
+  --color-cream: #FFFEF9;
+  --color-gold: #B8976B;
+  --color-gold-light: #CEAD7D;
+  --color-text-dark: #3D3D3D;
+  --color-text-medium: #5A5A5A;
+  --color-text-light: #7A7A7A;
+  --color-accent-rose: #E8D5D0;
+  --color-accent-sage: #D4DDD4;
+  --color-white: #FFFFFF;
+
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--color-eggshell);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.script-font {
+  font-family: var(--font-script);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-gold-light);
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+::selection {
+  background-color: var(--color-gold-light);
+  color: var(--color-white);
+}
