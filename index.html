@@ -9,6 +9,15 @@
     <title>Claudio & Consuelo - Ceremonia Civil</title>
   </head>
   <body>
+    <!-- Hidden form for Netlify Forms detection (required for JS-rendered forms) -->
+    <form name="rsvp" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <select name="guests"></select>
+      <input type="radio" name="attendance" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

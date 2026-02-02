@@ -10,16 +10,41 @@ function Confirmation() {
     message: ''
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setIsSubmitted(true)
+    setIsSubmitting(true)
+    setError(null)
+
+    const formBody = new URLSearchParams({
+      'form-name': 'rsvp',
+      ...formData
+    }).toString()
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formBody
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+      } else {
+        setError('Hubo un problema al enviar tu confirmación. Por favor, intenta de nuevo.')
+      }
+    } catch (err) {
+      setError('Error de conexión. Por favor, verifica tu conexión e intenta de nuevo.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -44,7 +69,23 @@ function Confirmation() {
     <section id="confirmar" className="confirmation section">
       <h2 className="section-title">Confirmar Asistencia</h2>
 
-      <form className="confirmation-form" onSubmit={handleSubmit}>
+      <form
+        className="confirmation-form"
+        name="rsvp"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
+        <input type="hidden" name="form-name" value="rsvp" />
+        <p hidden>
+          <label>
+            No llenar: <input name="bot-field" onChange={handleChange} />
+          </label>
+        </p>
+
+        {error && <p className="form-error">{error}</p>}
+
         <div className="form-group">
           <label htmlFor="name">Nombre completo</label>
           <input
@@ -127,8 +168,8 @@ function Confirmation() {
           />
         </div>
 
-        <button type="submit" className="submit-btn">
-          Confirmar asistencia
+        <button type="submit" className="submit-btn" disabled={isSubmitting}>
+          {isSubmitting ? 'Enviando...' : 'Confirmar asistencia'}
         </button>
       </form>
     </section>
