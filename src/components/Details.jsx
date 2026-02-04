@@ -18,7 +18,7 @@ function Details() {
           <h3 className="detail-label script-font">Día</h3>
           <p className="detail-value">Febrero</p>
           <p className="detail-highlight">28</p>
-          <p className="detail-subvalue">2025</p>
+          <p className="detail-subvalue">2026</p>
         </div>
 
         <div className="detail-card">

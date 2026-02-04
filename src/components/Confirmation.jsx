@@ -5,7 +5,6 @@ function Confirmation() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    guests: '1',
     attendance: '',
     message: ''
   })
@@ -59,7 +58,7 @@ function Confirmation() {
           </div>
           <h2 className="script-font">¡Gracias!</h2>
           <p>Hemos recibido tu confirmación.</p>
-          <p className="success-subtext">Nos vemos el 28 de febrero</p>
+          <p className="success-subtext">Nos vemos el 28 de febrero de 2026</p>
         </div>
       </section>
     )
@@ -112,48 +111,25 @@ function Confirmation() {
           />
         </div>
 
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="guests">Número de invitados</label>
-            <select
-              id="guests"
-              name="guests"
-              value={formData.guests}
-              onChange={handleChange}
+        <div className="form-group">
+          <label>¿Asistirás?</label>
+          <div className="attendance-buttons">
+            <button
+              type="button"
+              className={`attendance-btn ${formData.attendance === 'yes' ? 'selected' : ''}`}
+              onClick={() => setFormData(prev => ({ ...prev, attendance: 'yes' }))}
             >
-              <option value="1">1 persona</option>
-              <option value="2">2 personas</option>
-              <option value="3">3 personas</option>
-              <option value="4">4 personas</option>
-            </select>
+              Sí, asistiré
+            </button>
+            <button
+              type="button"
+              className={`attendance-btn ${formData.attendance === 'no' ? 'selected' : ''}`}
+              onClick={() => setFormData(prev => ({ ...prev, attendance: 'no' }))}
+            >
+              No podré asistir
+            </button>
           </div>
-
-          <div className="form-group">
-            <label>¿Asistirás?</label>
-            <div className="radio-group">
-              <label className="radio-label">
-                <input
-                  type="radio"
-                  name="attendance"
-                  value="yes"
-                  checked={formData.attendance === 'yes'}
-                  onChange={handleChange}
-                  required
-                />
-                Sí
-              </label>
-              <label className="radio-label">
-                <input
-                  type="radio"
-                  name="attendance"
-                  value="no"
-                  checked={formData.attendance === 'no'}
-                  onChange={handleChange}
-                />
-                No
-              </label>
-            </div>
-          </div>
+          <input type="hidden" name="attendance" value={formData.attendance} required />
         </div>
 
         <div className="form-group">

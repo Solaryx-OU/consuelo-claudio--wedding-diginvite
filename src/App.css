@@ -4,7 +4,7 @@
   background-color: var(--color-eggshell);
   background-image:
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  overflow-x: clip;
+  overflow: visible;
 }
 
 main {
@@ -16,7 +16,7 @@ main {
 .flower {
   position: absolute;
   pointer-events: none;
-  z-index: 2;
+  z-index: 100;
 }
 
 .flower-1 {
@@ -159,37 +159,37 @@ main {
   .flower-1 {
     width: 200px;
     top: 0;
-    left: -30px;
+    left: 0;
   }
 
   .flower-2 {
     width: 200px;
     top: 0;
-    right: -30px;
+    right: 0;
   }
 
   .flower-3 {
     width: 180px;
     top: 600px;
-    left: -40px;
+    left: 0;
   }
 
   .flower-4 {
     width: 180px;
     top: 1400px;
-    right: -40px;
+    right: 0;
   }
 
   .flower-5 {
     width: 180px;
     bottom: 350px;
-    left: -40px;
+    left: 0;
   }
 
   .flower-6 {
     width: 200px;
     bottom: 30px;
-    right: -30px;
+    right: 0;
   }
 
   .footer p {
@@ -219,29 +219,29 @@ main {
   }
 
   .flower-1 {
-    left: -20px;
+    left: 0;
   }
 
   .flower-2 {
-    right: -20px;
+    right: 0;
   }
 
   .flower-3 {
     top: 550px;
-    left: -30px;
+    left: 0;
   }
 
   .flower-4 {
     top: 1200px;
-    right: -30px;
+    right: 0;
   }
 
   .flower-5 {
     bottom: 300px;
-    left: -30px;
+    left: 0;
   }
 
   .flower-6 {
-    right: -20px;
+    right: 0;
   }
 }

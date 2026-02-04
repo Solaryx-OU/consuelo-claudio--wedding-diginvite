@@ -107,6 +107,38 @@
   margin-top: 5px;
 }
 
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.countdown-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-gold);
+  line-height: 1;
+  min-width: 50px;
+  text-align: center;
+}
+
+.countdown-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
 .hero-cta {
   margin-top: 25px;
 }
@@ -197,6 +229,20 @@
     font-size: 1.8rem;
   }
 
+  .countdown {
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .countdown-number {
+    font-size: 1.6rem;
+    min-width: 40px;
+  }
+
+  .countdown-label {
+    font-size: 0.6rem;
+  }
+
   .scroll-indicator {
     margin-top: 30px;
   }
@@ -225,5 +271,19 @@
 
   .hero-cta span {
     font-size: 1.5rem;
+  }
+
+  .countdown {
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .countdown-number {
+    font-size: 1.3rem;
+    min-width: 35px;
+  }
+
+  .countdown-label {
+    font-size: 0.55rem;
   }
 }
